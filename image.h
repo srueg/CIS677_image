@@ -9,5 +9,12 @@
 #include <stdbool.h>
 #include "helpers.h"
 
+#define STBI_NO_HDR
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
+
 
 #endif // MAIN_H_
