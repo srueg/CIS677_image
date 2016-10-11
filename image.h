@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include "helpers.h"
+#include <pthread.h>
+
 
 #define STBI_NO_HDR
 #define STB_IMAGE_IMPLEMENTATION
