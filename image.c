@@ -58,6 +58,10 @@ int main(int argc, char *argv[]) {
     pthread_t thread[THREAD_COUNT];
     image_data_t *image_data[THREAD_COUNT];
 
+    // Start timing
+    struct timeval tval_before, tval_after, tval_result;
+    gettimeofday(&tval_before, NULL);
+
     int items = (width*height + THREAD_COUNT-1) / THREAD_COUNT;
     // initialize and start threads
     for(uint8_t i = 0; i<THREAD_COUNT; i++){
@@ -91,6 +95,11 @@ int main(int argc, char *argv[]) {
             exit(EXIT_FAILURE);
         }
     }
+
+    // Stop timing
+    gettimeofday(&tval_after, NULL);
+    timersub(&tval_after, &tval_before, &tval_result);
+    printf("Time elapsed: %ld.%06ld\n", (long int)tval_result.tv_sec, (long int)tval_result.tv_usec);
 
     if(!stbi_write_bmp(output_filename, width, height, comp, destination_image)){
         perror("Could not save image");

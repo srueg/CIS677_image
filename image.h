@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include "helpers.h"
 #include <pthread.h>
+#include <sys/time.h>
 
 
 #define STBI_NO_HDR
