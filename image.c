@@ -54,6 +54,7 @@ int main(int argc, char *argv[]) {
     destination_image = malloc(height * width * comp);
 
     printf("Width: %d, Height: %d, Components: %d\n", width, height, components);
+    printf("Using %d thread(s).\n", THREAD_COUNT);
 
     pthread_t thread[THREAD_COUNT];
     image_data_t *image_data[THREAD_COUNT];

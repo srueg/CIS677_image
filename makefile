@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -Wall -Wno-misleading-indentation -g -std=c99 -pthread -lm
+CFLAGS= -Wall -g -std=c99 -pthread -lm
 
 ODIR=obj
 
